@@ -24,13 +24,17 @@ jobs:
       with:
         gradle-version: 8.2
 
+    - name: List files (Debug)
+      run: |
+        cd AndroidDataCollector
+        ls -R
+
     - name: Build with Gradle
       run: |
         cd AndroidDataCollector
-        # Create a dummy local.properties to avoid warnings
         echo "sdk.dir=$ANDROID_HOME" > local.properties
-        # Run build with stacktrace to see errors if it fails
-        gradle assembleDebug --stacktrace --info
+        # Run with --warning-mode all to see potential issues
+        gradle assembleDebug --stacktrace --info --warning-mode all
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
