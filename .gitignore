@@ -1,17 +1,12 @@
-# Android
-.gradle/
-local.properties
-build/
-app/build/
-.idea/
 *.iml
+.gradle
+/local.properties
+/.idea/
 .DS_Store
-/captures/
+/build
+/captures
 .externalNativeBuild
 .cxx
-
-# PHP/Web
-apk/*.apk
-vendor/
-node_modules/
-.vscode/
+local.properties
+AndroidDataCollector/app/build/
+AndroidDataCollector/.gradle/
