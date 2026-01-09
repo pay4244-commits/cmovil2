@@ -9,7 +9,7 @@ class DataRepository(private val context: Context, private val db: AppDatabase) 
 
     // IMPORTANT: Change this URL to your computer's IP if running on a real device
     // 10.0.2.2 is localhost for Android Emulator
-    private val BASE_URL = "http://10.0.2.2/cmovil/" 
+    private val BASE_URL = "http://10.114.78.5/cmovil/" 
 
     private val api: ApiService by lazy {
         Retrofit.Builder()
