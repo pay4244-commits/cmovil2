@@ -3,8 +3,7 @@ name: Android Build
 on:
   push:
     branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -28,10 +27,14 @@ jobs:
     - name: Build with Gradle
       run: |
         cd AndroidDataCollector
-        gradle assembleDebug --no-daemon
+        # Create a dummy local.properties to avoid warnings
+        echo "sdk.dir=$ANDROID_HOME" > local.properties
+        # Run build with stacktrace to see errors if it fails
+        gradle assembleDebug --stacktrace --info
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
+      if: success()
       with:
         name: app-debug
         path: AndroidDataCollector/app/build/outputs/apk/debug/app-debug.apk
