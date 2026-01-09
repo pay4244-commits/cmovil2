@@ -1,19 +1,14 @@
 # Android
-android_project/.gradle/
-android_project/local.properties
-android_project/build/
-android_project/app/build/
-android_project/.idea/
+.gradle/
+local.properties
+build/
+app/build/
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/
 .DS_Store
-/build/
 /captures/
 .externalNativeBuild
 .cxx
-local.properties
 
 # PHP/Web
 apk/*.apk
