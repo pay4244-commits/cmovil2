@@ -179,7 +179,7 @@ class DataCollectionService : Service() {
         return NotificationCompat.Builder(this, "DataCollectionChannel")
             .setContentTitle("Data Collector Running")
             .setContentText("Collecting device data every 5 minutes")
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .build()
     }
 
